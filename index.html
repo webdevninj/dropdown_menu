@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Drop_down</title>
+</head>
+
+<body>
+
+  <div class="menu-wrapper">
+    <h1 class="menu-name">Lorem ipsum</h1>
+
+    <section class="menu-section">
+      <h3 class="menu-item">1.Lorem ipsum</h3>
+      <p class="menu-info-text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Labore obcaecati totam
+        perspiciatis debitis maiores dolorem distinctio blanditiis vel,
+        a delectus assumenda aliquid fugit est impedit
+        optio cum exercitationem? Dolorem, esse.
+      </p>
+    </section>
+
+    <section class="menu-section">
+      <h3 class="menu-item">2.Lorem ipsum</h3>
+      <p class="menu-info-text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Labore obcaecati totam
+        perspiciatis debitis maiores dolorem distinctio blanditiis vel,
+        a delectus assumenda aliquid fugit est impedit
+        optio cum exercitationem? Dolorem, esse.
+      </p>
+    </section>
+
+    <section class="menu-section">
+      <h3 class="menu-item">3.Lorem ipsum</h3>
+      <p class="menu-info-text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Labore obcaecati totam
+        perspiciatis debitis maiores dolorem distinctio blanditiis vel,
+        a delectus assumenda aliquid fugit est impedit
+        optio cum exercitationem? Dolorem, esse.
+      </p>
+    </section>
+
+    <section class="menu-section">
+      <h3 class="menu-item">4.Lorem ipsum</h3>
+      <p class="menu-info-text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Labore obcaecati totam
+        perspiciatis debitis maiores dolorem distinctio blanditiis vel,
+        a delectus assumenda aliquid fugit est impedit
+        optio cum exercitationem? Dolorem, esse.
+      </p>
+    </section>
+
+    <section class="menu-section">
+      <h3 class="menu-item">5.Lorem ipsum</h3>
+      <p class="menu-info-text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Labore obcaecati totam
+        perspiciatis debitis maiores dolorem distinctio blanditiis vel,
+        a delectus assumenda aliquid fugit est impedit
+        optio cum exercitationem? Dolorem, esse.
+      </p>
+    </section>
+
+  </div>
+
+
+  <script>
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuItems.forEach(menuItem => {
+      menuItem.addEventListener('click', () => toggleMenuInfo(menuItem));
+    });
+
+    function toggleMenuInfo(menuItem) {
+      const menuSections = document.querySelectorAll('.menu-section');
+
+      const menuInfoText = menuItem.nextElementSibling;
+      if (menuInfoText.style.maxHeight) {
+        menuInfoText.style.maxHeight = null;
+      }
+      else if (menuInfoText) {
+        menuSections.forEach(function (section) {
+          const menuInfoText = section.querySelector('.menu-info-text');
+          if (menuInfoText) {
+            menuInfoText.style.maxHeight = null;
+          }
+        });
+        menuInfoText.style.maxHeight = menuInfoText.scrollHeight + "px";
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>

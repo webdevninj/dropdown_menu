@@ -1,0 +1,70 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-weight: 100;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #222;
+    flex-direction: column;
+}
+
+.menu-wrapper {
+    margin-top: 10%;
+}
+
+.menu-wrapper {
+    width: 55%;
+    border: 1px solid;
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-item {
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item::after {
+    content: '';
+    background-image: url('./dropdown.svg');
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1rem;
+    height: 1rem;
+}
+
+.menu-wrapper .menu-section:not(:last-of-type) .menu-item {
+    border-bottom: 1px solid;
+}
+
+.menu-info-text {
+    max-height: 0px;
+    overflow: hidden;
+    padding-inline: 20px;
+    font-size: .9rem;
+    transition: max-height 0.5s;
+}
